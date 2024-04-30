@@ -2,8 +2,8 @@ package com.natamus.configurabledespawntimer.neoforge.config;
 
 import com.natamus.collective.config.DuskConfig;
 import com.natamus.configurabledespawntimer.util.Reference;
-import net.neoforged.neoforge.client.ConfigScreenHandler;
 import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.neoforge.client.ConfigScreenHandler;
 
 public class IntegrateNeoForgeConfig {
 	public static void registerScreen(ModLoadingContext modLoadingContext) {

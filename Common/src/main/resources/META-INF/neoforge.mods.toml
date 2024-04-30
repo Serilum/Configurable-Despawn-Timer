@@ -6,7 +6,7 @@ logoFile="icon.png"
 
 [[mods]]
 modId="configurabledespawntimer"
-version="4.0"
+version="3.4"
 displayName="Configurable Despawn Timer"
 displayURL="https://serilum.com/mod/configurable-despawn-timer"
 authors="Rick South"
@@ -22,7 +22,6 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.configurabledespawntimer]]
     modId="collective"
     type="required"
-    mandatory=true
     versionRange="[7.54,)"
     ordering="NONE"
     side="BOTH"
@@ -30,8 +29,7 @@ If you would like to contribute too, check out https://serilum.com/donate. Appre
 [[dependencies.configurabledespawntimer]]
     modId="minecraft"
     type="required"
-    mandatory=true
-    versionRange="[1.20.4]"
+    versionRange="[1.20.5]"
     ordering="NONE"
     side="BOTH"
 

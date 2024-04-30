@@ -2,14 +2,13 @@ package com.natamus.configurabledespawntimer;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.configurabledespawntimer.neoforge.config.IntegrateNeoForgeConfig;
-import com.natamus.configurabledespawntimer.neoforge.events.NeoForgeDespawnItemEvent;
+import com.natamus.configurabledespawntimer.neoforge.events.NeoForgeDespawnEvents;
 import com.natamus.configurabledespawntimer.util.Reference;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.neoforge.common.NeoForge;
 
 @Mod(Reference.MOD_ID)
 public class ModNeoForge {
@@ -26,7 +25,7 @@ public class ModNeoForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-		NeoForge.EVENT_BUS.register(NeoForgeDespawnItemEvent.class);
+		NeoForge.EVENT_BUS.register(NeoForgeDespawnEvents.class);
 	}
 
 	private static void setGlobalConstants() {
