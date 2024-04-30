@@ -1,19 +1,18 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.natamus.configurabledespawntimer.forge.mixin",
+  "package": "com.natamus.configurabledespawntimer.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "configurabledespawntimer_forge.refmap.json",
   "mixins": [
-
+	"ExperienceOrbMixin",
+	"ItemEntityMixin",
+	"PlayerMixin"
   ],
   "client": [
-  
   ],
   "server": [
-
   ],
   "injectors": {
-    "defaultRequire": 1
+	"defaultRequire": 1
   }
 }

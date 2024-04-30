@@ -2,7 +2,7 @@ package com.natamus.configurabledespawntimer;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.configurabledespawntimer.forge.config.IntegrateForgeConfig;
-import com.natamus.configurabledespawntimer.forge.events.ForgeDespawnItemEvent;
+import com.natamus.configurabledespawntimer.forge.events.ForgeDespawnEvents;
 import com.natamus.configurabledespawntimer.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,7 +27,7 @@ public class ModForge {
 	}
 
 	private void loadComplete(final FMLLoadCompleteEvent event) {
-		MinecraftForge.EVENT_BUS.register(new ForgeDespawnItemEvent());
+		MinecraftForge.EVENT_BUS.register(new ForgeDespawnEvents());
 	}
 
 	private static void setGlobalConstants() {
