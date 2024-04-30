@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "configurabledespawntimer",
-  "version": "3.4",
+  "version": "4.0",
 
   "name": "Configurable Despawn Timer",
   "description": "Allows items to remain on the ground longer or shorter than the default lifespan.",
@@ -18,7 +18,7 @@
   "environment": "*",
   "entrypoints": { "main": [ "com.natamus.configurabledespawntimer.ModFabric" ], "modmenu": [ "com.natamus.configurabledespawntimer.fabric.config.IntegrateModMenu" ] },
   "mixins": [
-    "configurabledespawntimer_fabric.mixins.json"
+    "configurabledespawntimer.mixins.json"
   ],
 
   "depends": {
@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": ">=1.19",
     "java": ">=17",
-    "collective": ">=7.21"
+    "collective": ">=7.54"
   },
 
   "custom": {
@@ -41,21 +41,19 @@
 	  " ",
 	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
 	  " ",
-	  "If you would like to contribute too, check out https://ricksouth.com/donate.",
+	  "If you would like to contribute too, check out https://serilum.com/donate.",
 	  " ",
 	  "Membership sponsors:",
-	  " Adam E",
 	  " Alister",
+	  " Andrean Olgo",
 	  " aternosorg",
+	  " BirdieMiner",
 	  " Cherriesaurus",
-	  " FireStriker",
-	  " Greg Johnson",
-	  " Kreezxil",
+	  " Jack",
+	  " Jeremy Langford",
 	  " Michael W. S.",
-	  " Mir3JonCZ",
-	  " Rebecca Hb.",
+	  " pepe1191",
 	  " Shana Gitnick",
-	  " silver Bowsman",
 	  " Tyler Behl"
   ]
 }
