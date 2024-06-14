@@ -43,9 +43,9 @@ public class CommandCdt {
 	
 	private static void showUsage(CommandSourceStack source) {
 		MessageFunctions.sendMessage(source, "Configurable Despawn Timer Usage:", ChatFormatting.DARK_GREEN, true);
-		MessageFunctions.sendMessage(source, " /cemd usage", ChatFormatting.DARK_GREEN);
+		MessageFunctions.sendMessage(source, " /cdt usage", ChatFormatting.DARK_GREEN);
 		MessageFunctions.sendMessage(source, "  Show this message.", ChatFormatting.DARK_GRAY);
-		MessageFunctions.sendMessage(source, " /cemd reload", ChatFormatting.DARK_GREEN);
+		MessageFunctions.sendMessage(source, " /cdt reload", ChatFormatting.DARK_GREEN);
 		MessageFunctions.sendMessage(source, "  Reloads the config file.", ChatFormatting.DARK_GRAY);
 	}
 }
