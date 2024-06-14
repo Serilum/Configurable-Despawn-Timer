@@ -77,6 +77,10 @@ public abstract class ItemEntityMixin {
 
 	@Unique
 	private static boolean shouldSetAge(ItemEntity itemEntity) {
+		if (itemEntity.getAge() == 5999 && itemEntity.hasPickUpDelay()) {
+			return false;
+		}
+
 		if (itemEntity.getTags().contains(Reference.MOD_ID + ".set")) {
 			return false;
 		}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "configurabledespawntimer",
-  "version": "4.0",
+  "version": "4.1",
 
   "name": "Configurable Despawn Timer",
   "description": "Allows items to remain on the ground longer or shorter than the default lifespan.",
@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": ">=1.19",
     "java": ">=17",
-    "collective": ">=7.54"
+    "collective": ">=7.61"
   },
 
   "custom": {
@@ -49,11 +49,10 @@
 	  " aternosorg",
 	  " BirdieMiner",
 	  " Cherriesaurus",
-	  " Jack",
 	  " Jeremy Langford",
 	  " Michael W. S.",
-	  " pepe1191",
 	  " Shana Gitnick",
+	  " Sukhmai",
 	  " Tyler Behl"
   ]
 }
