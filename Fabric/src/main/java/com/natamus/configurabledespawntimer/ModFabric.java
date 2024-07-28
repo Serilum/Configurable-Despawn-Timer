@@ -1,6 +1,7 @@
 package com.natamus.configurabledespawntimer;
 
 import com.natamus.collective.check.RegisterMod;
+import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.configurabledespawntimer.cmd.CommandCdt;
 import com.natamus.configurabledespawntimer.events.DespawnEvents;
 import com.natamus.configurabledespawntimer.util.Reference;
@@ -14,6 +15,10 @@ public class ModFabric implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
+		if (!ShouldLoadCheck.shouldLoad(Reference.MOD_ID)) {
+			return;
+		}
+
 		setGlobalConstants();
 		ModCommon.init();
 
