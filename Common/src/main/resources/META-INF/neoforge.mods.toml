@@ -1,0 +1,37 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Serilum/.issue-tracker/labels/Mod:%20Configurable%20Despawn%20Timer"
+logoFile="icon.png"
+
+[[mods]]
+modId="configurabledespawntimer"
+version="4.2"
+displayName="Configurable Despawn Timer"
+displayURL="https://serilum.com/mod/configurable-despawn-timer"
+authors="Rick South"
+description='''Allows items to remain on the ground longer or shorter than the default lifespan.
+'''
+credits='''Thank you very much to my Membership sponsors for supporting the development of this mod:  
+
+Alister, Andrean Olgo, aternosorg, Cherriesaurus, kate1073, Michael W. S., Tyler Behl, XAgent   
+
+If you would like to contribute too, check out https://serilum.com/donate. Appreciate it! <3   
+'''
+
+[[dependencies.configurabledespawntimer]]
+    modId="collective"
+    type="required"
+    versionRange="[7.88,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.configurabledespawntimer]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.2,1.21.3]"
+    ordering="NONE"
+    side="BOTH"
+
+[[mixins]]
+    config = "configurabledespawntimer.mixins.json"
