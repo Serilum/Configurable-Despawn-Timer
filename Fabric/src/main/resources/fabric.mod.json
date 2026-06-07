@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "configurabledespawntimer",
-  "version": "4.3",
+  "version": "4.5",
 
   "name": "Configurable Despawn Timer",
   "description": "Allows items to remain on the ground longer or shorter than the default lifespan.",
@@ -26,7 +26,7 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "java": ">=17",
-    "collective": ">=7.91"
+    "collective": ">=8.25"
   },
 
   "custom": {
@@ -44,15 +44,12 @@
 	  "If you would like to contribute too, check out https://serilum.com/donate.",
 	  " ",
 	  "Membership sponsors:",
-	  " Alister",
 	  " Andrean Olgo",
 	  " aternosorg",
 	  " Cherriesaurus",
-	  " David Sanchez",
-	  " drdog111",
-	  " Michael W. S.",
-	  " t128",
-	  " Tyler Behl",
-	  " XAgent"
+	  " Linda Jansen",
+	  " Michelle Smith",
+	  " MWS",
+	  " Tyler Behl"
   ]
 }
