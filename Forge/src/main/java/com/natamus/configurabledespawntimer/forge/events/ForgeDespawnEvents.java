@@ -27,8 +27,8 @@ public class ForgeDespawnEvents {
 		DespawnEvents.onWorldLoad((ServerLevel)level);
 	}
 
-    @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent e) {
-    	CommandCdt.register(e.getDispatcher());
-    }
+	@SubscribeEvent
+	public static void registerCommands(RegisterCommandsEvent e) {
+		CommandCdt.register(e.getDispatcher());
+	}
 }

@@ -29,18 +29,18 @@ public abstract class ExperienceOrbMixin {
 				experienceOrb.addTag(Reference.MOD_ID + ".set");
 			}
 		}, true);
-    }
+	}
 
 	@Inject(method = "addAdditionalSaveData", at = @At(value = "TAIL"))
-    public void addAdditionalSaveData(ValueOutput valueOutput, CallbackInfo ci) {
+	public void addAdditionalSaveData(ValueOutput valueOutput, CallbackInfo ci) {
 		valueOutput.putInt("ActualAge", this.age);
-    }
+	}
 
 	@Inject(method = "readAdditionalSaveData", at = @At(value = "TAIL"))
-    public void readAdditionalSaveData(ValueInput valueInput, CallbackInfo ci) {
+	public void readAdditionalSaveData(ValueInput valueInput, CallbackInfo ci) {
 		int actualAge = valueInput.getIntOr("ActualAge", Integer.MIN_VALUE);
 		if (actualAge != Integer.MIN_VALUE) {
 			this.age = actualAge;
 		}
-    }
+	}
 }

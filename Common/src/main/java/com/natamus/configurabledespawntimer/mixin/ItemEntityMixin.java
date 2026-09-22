@@ -45,7 +45,7 @@ public abstract class ItemEntityMixin {
 		}, true);
 	}
 
-	@Inject(method = "tick()V", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/world/entity/item/ItemEntity;updateInWaterStateAndDoFluidPushing()Z"))
+	@Inject(method = "tick()V", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/world/entity/item/ItemEntity;updateFluidInteraction()Z"))
 	public void tick(CallbackInfo ci) {
 		if (this.age == INFINITE_LIFETIME) {
 			if (!((ItemEntity)(Object)this).entityTags().contains(Reference.MOD_ID + ".infinite_lifetime")) {
