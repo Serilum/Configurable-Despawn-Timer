@@ -1,10 +1,10 @@
-package com.natamus.configurabledespawntimer;
+package com.serilum.configurabledespawntimer;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.configurabledespawntimer.forge.config.IntegrateForgeConfig;
-import com.natamus.configurabledespawntimer.forge.events.ForgeDespawnEvents;
-import com.natamus.configurabledespawntimer.util.Reference;
+import com.serilum.configurabledespawntimer.forge.config.IntegrateForgeConfig;
+import com.serilum.configurabledespawntimer.forge.events.ForgeDespawnEvents;
+import com.serilum.configurabledespawntimer.util.Reference;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;

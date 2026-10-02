@@ -1,7 +1,7 @@
-package com.natamus.configurabledespawntimer.forge.config;
+package com.serilum.configurabledespawntimer.forge.config;
 
 import com.natamus.collective.config.DuskConfig;
-import com.natamus.configurabledespawntimer.util.Reference;
+import com.serilum.configurabledespawntimer.util.Reference;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModLoadingContext;
 

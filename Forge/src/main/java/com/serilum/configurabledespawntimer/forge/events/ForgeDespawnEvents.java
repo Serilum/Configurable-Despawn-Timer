@@ -1,8 +1,8 @@
-package com.natamus.configurabledespawntimer.forge.events;
+package com.serilum.configurabledespawntimer.forge.events;
 
 import com.natamus.collective.functions.WorldFunctions;
-import com.natamus.configurabledespawntimer.cmd.CommandCdt;
-import com.natamus.configurabledespawntimer.events.DespawnEvents;
+import com.serilum.configurabledespawntimer.cmd.CommandCdt;
+import com.serilum.configurabledespawntimer.events.DespawnEvents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -20,8 +20,8 @@ public class ForgeDespawnEvents {
 		DespawnEvents.onWorldLoad((ServerLevel)level);
 	}
 
-    @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent e) {
-    	CommandCdt.register(e.getDispatcher());
-    }
+	@SubscribeEvent
+	public static void registerCommands(RegisterCommandsEvent e) {
+		CommandCdt.register(e.getDispatcher());
+	}
 }

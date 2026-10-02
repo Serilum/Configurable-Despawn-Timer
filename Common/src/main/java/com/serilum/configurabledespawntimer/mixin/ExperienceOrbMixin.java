@@ -1,8 +1,8 @@
-package com.natamus.configurabledespawntimer.mixin;
+package com.serilum.configurabledespawntimer.mixin;
 
 import com.natamus.collective.functions.TaskFunctions;
-import com.natamus.configurabledespawntimer.config.ConfigHandler;
-import com.natamus.configurabledespawntimer.util.Reference;
+import com.serilum.configurabledespawntimer.config.ConfigHandler;
+import com.serilum.configurabledespawntimer.util.Reference;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -28,17 +28,17 @@ public abstract class ExperienceOrbMixin {
 				experienceOrb.addTag(Reference.MOD_ID + ".set");
 			}
 		}, true);
-    }
+	}
 
 	@Inject(method = "addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V", at = @At(value = "TAIL"))
-    public void addAdditionalSaveData(CompoundTag compoundTag, CallbackInfo ci) {
+	public void addAdditionalSaveData(CompoundTag compoundTag, CallbackInfo ci) {
 		compoundTag.putInt("ActualAge", this.age);
-    }
+	}
 
 	@Inject(method = "readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V", at = @At(value = "TAIL"))
-    public void readAdditionalSaveData(CompoundTag compoundTag, CallbackInfo ci) {
+	public void readAdditionalSaveData(CompoundTag compoundTag, CallbackInfo ci) {
 		if (compoundTag.contains("ActualAge")) {
 			this.age = compoundTag.getInt("ActualAge");
 		}
-    }
+	}
 }

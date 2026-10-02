@@ -1,10 +1,10 @@
-package com.natamus.configurabledespawntimer;
+package com.serilum.configurabledespawntimer;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.configurabledespawntimer.cmd.CommandCdt;
-import com.natamus.configurabledespawntimer.events.DespawnEvents;
-import com.natamus.configurabledespawntimer.util.Reference;
+import com.serilum.configurabledespawntimer.cmd.CommandCdt;
+import com.serilum.configurabledespawntimer.events.DespawnEvents;
+import com.serilum.configurabledespawntimer.util.Reference;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;

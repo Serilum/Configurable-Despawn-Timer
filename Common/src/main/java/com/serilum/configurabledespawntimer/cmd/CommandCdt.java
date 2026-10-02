@@ -1,9 +1,9 @@
-package com.natamus.configurabledespawntimer.cmd;
-import com.natamus.configurabledespawntimer.util.Reference;
+package com.serilum.configurabledespawntimer.cmd;
+import com.serilum.configurabledespawntimer.util.Reference;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.natamus.collective.functions.MessageFunctions;
-import com.natamus.configurabledespawntimer.util.Util;
+import com.serilum.configurabledespawntimer.util.Util;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

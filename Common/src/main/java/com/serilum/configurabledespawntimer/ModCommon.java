@@ -1,6 +1,6 @@
-package com.natamus.configurabledespawntimer;
+package com.serilum.configurabledespawntimer;
 
-import com.natamus.configurabledespawntimer.config.ConfigHandler;
+import com.serilum.configurabledespawntimer.config.ConfigHandler;
 
 public class ModCommon {
 

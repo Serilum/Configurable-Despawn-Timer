@@ -1,6 +1,6 @@
-package com.natamus.configurabledespawntimer.events;
+package com.serilum.configurabledespawntimer.events;
 
-import com.natamus.configurabledespawntimer.util.Util;
+import com.serilum.configurabledespawntimer.util.Util;
 import net.minecraft.world.level.Level;
 
 public class DespawnEvents {

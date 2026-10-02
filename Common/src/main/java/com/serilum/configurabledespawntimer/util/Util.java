@@ -1,4 +1,4 @@
-package com.natamus.configurabledespawntimer.util;
+package com.serilum.configurabledespawntimer.util;
 
 import com.natamus.collective.functions.DataFunctions;
 import com.natamus.collective.functions.NumberFunctions;

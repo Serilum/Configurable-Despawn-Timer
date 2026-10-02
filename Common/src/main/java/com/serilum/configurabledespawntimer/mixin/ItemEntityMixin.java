@@ -1,9 +1,9 @@
-package com.natamus.configurabledespawntimer.mixin;
+package com.serilum.configurabledespawntimer.mixin;
 
 import com.natamus.collective.functions.TaskFunctions;
-import com.natamus.configurabledespawntimer.config.ConfigHandler;
-import com.natamus.configurabledespawntimer.util.Reference;
-import com.natamus.configurabledespawntimer.util.Util;
+import com.serilum.configurabledespawntimer.config.ConfigHandler;
+import com.serilum.configurabledespawntimer.util.Reference;
+import com.serilum.configurabledespawntimer.util.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;

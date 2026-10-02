@@ -1,6 +1,6 @@
-package com.natamus.configurabledespawntimer.mixin;
+package com.serilum.configurabledespawntimer.mixin;
 
-import com.natamus.configurabledespawntimer.util.Reference;
+import com.serilum.configurabledespawntimer.util.Reference;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
