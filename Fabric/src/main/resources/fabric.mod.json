@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "configurabledespawntimer",
-  "version": "4.6",
+  "version": "4.7",
 
   "name": "Configurable Despawn Timer",
   "description": "Allows items to remain on the ground longer or shorter than the default lifespan.",
-  "authors": [ "Rick South" ],
+  "authors": [ "Serilum" ],
   "contact": {
     "homepage": "https://serilum.com/mod/configurable-despawn-timer",
     "sources": "https://github.com/Serilum/Configurable-Despawn-Timer",
@@ -16,7 +16,7 @@
   "icon": "icon.png",
 
   "environment": "*",
-  "entrypoints": { "main": [ "com.natamus.configurabledespawntimer.ModFabric" ], "modmenu": [ "com.natamus.configurabledespawntimer.fabric.config.IntegrateModMenu" ] },
+  "entrypoints": { "main": [ "com.serilum.configurabledespawntimer.ModFabric" ], "modmenu": [ "com.serilum.configurabledespawntimer.fabric.config.IntegrateModMenu" ] },
   "mixins": [
     "configurabledespawntimer.mixins.json"
   ],
@@ -41,7 +41,7 @@
 	  " ",
 	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
 	  " ",
-	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  "If you would like to contribute too, check out https://serilum.com/donate",
 	  " ",
 	  "Membership sponsors:",
 	  " Andrean Olgo",
