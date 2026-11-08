@@ -2,10 +2,12 @@ package com.serilum.configurabledespawntimer.util;
 
 import com.natamus.collective.functions.DataFunctions;
 import com.natamus.collective.functions.NumberFunctions;
+import com.serilum.configurabledespawntimer.data.Constants;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
@@ -34,7 +36,7 @@ public class Util {
 		try {
 			loadItemConfig(level);
 		} catch (Exception ex) {
-			System.out.println("[" + Reference.NAME + "] Error on loading the item config file.");
+			Constants.logger.warn("[" + Reference.NAME + "] Error on loading the item config file.");
 		}
 
 		loadedItemConfig = true;
@@ -115,5 +117,114 @@ public class Util {
 
 			writer.close();
 		}
+	}
+
+	public static String getSpecificDespawnTimes() {
+		List<String> despawnTimes = new ArrayList<>();
+		for (String line : getConfigLines()) {
+			String itemId = getConfigLineItemId(line);
+			String despawnTime = getConfigLineDespawnTime(line);
+			if (itemId == null || !NumberFunctions.isNumeric(despawnTime)) {
+				continue;
+			}
+
+			if (Double.parseDouble(despawnTime) >= 0) {
+				despawnTimes.add(itemId + "=" + despawnTime);
+			}
+		}
+		return String.join(",", despawnTimes);
+	}
+
+	public static void setSpecificDespawnTimes(MinecraftServer server, String despawnTimesText) {
+		HashMap<String, String> despawnTimes = getDespawnTimesFromText(despawnTimesText);
+
+		List<String> lines = new ArrayList<>();
+		for (String line : getConfigLines()) {
+			String itemId = getConfigLineItemId(line);
+			if (itemId == null) {
+				lines.add(line);
+				continue;
+			}
+
+			lines.add(getConfigLine(itemId, despawnTimes.getOrDefault(itemId, "-1")));
+			despawnTimes.remove(itemId);
+		}
+
+		for (String itemId : despawnTimes.keySet()) {
+			lines.add(getConfigLine(itemId, despawnTimes.get(itemId)));
+		}
+
+		try {
+			PrintWriter writer = new PrintWriter(file, StandardCharsets.UTF_8);
+			for (String line : lines) {
+				writer.println(line);
+			}
+			writer.close();
+		}
+		catch (IOException ignored) {
+			return;
+		}
+
+		reloadItemConfig(server);
+	}
+
+	private static HashMap<String, String> getDespawnTimesFromText(String despawnTimesText) {
+		HashMap<String, String> despawnTimes = new HashMap<>();
+		for (String entry : despawnTimesText.split(",")) {
+			String[] entryParts = entry.split("=");
+			if (entryParts.length != 2 || !NumberFunctions.isNumeric(entryParts[1].strip())) {
+				continue;
+			}
+
+			String wholeTicks = String.valueOf(Math.round(Double.parseDouble(entryParts[1].strip())));
+			despawnTimes.put(entryParts[0].strip(), wholeTicks);
+		}
+		return despawnTimes;
+	}
+
+	private static void reloadItemConfig(MinecraftServer server) {
+		if (server == null) {
+			loadedItemConfig = false;
+			return;
+		}
+
+		try {
+			loadItemConfig(server.overworld());
+		}
+		catch (IOException ignored) { }
+	}
+
+	private static List<String> getConfigLines() {
+		try {
+			return Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
+		}
+		catch (IOException ignored) {
+			return new ArrayList<>();
+		}
+	}
+
+	private static String getConfigLineItemId(String line) {
+		String trimmedLine = line.trim();
+		if (trimmedLine.startsWith("//") || !trimmedLine.startsWith("'") || !trimmedLine.contains("' : ")) {
+			return null;
+		}
+		return trimmedLine.split("' : ")[0].substring(1).trim();
+	}
+
+	private static String getConfigLineDespawnTime(String line) {
+		String trimmedLine = line.trim();
+		if (trimmedLine.endsWith(",")) {
+			trimmedLine = trimmedLine.substring(0, trimmedLine.length() - 1).trim();
+		}
+
+		String[] lineParts = trimmedLine.split("' : ");
+		if (lineParts.length < 2) {
+			return "";
+		}
+		return lineParts[1].trim();
+	}
+
+	private static String getConfigLine(String itemId, String despawnTime) {
+		return "'" + itemId + "' : " + despawnTime + ",";
 	}
 }
